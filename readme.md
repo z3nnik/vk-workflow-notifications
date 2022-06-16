@@ -29,13 +29,13 @@ VK API version, by default `5.134`
 
 ## Examples
 ```yaml
-uses: z3nnik/vk-workflow-notifications
+uses: z3nnik/vk-workflow-notifications@v1
   with:
     access_token: ${{ secrets.GROUP_TOKEN }}
     peer_ids: 2000000002
 ```
 ```yaml
-uses: z3nnik/vk-workflow-notifications
+uses: z3nnik/vk-workflow-notifications@v1
   with:
     access_token: ${{ secrets.GROUP_TOKEN }}
     peer_ids: 2000000001,162667568
