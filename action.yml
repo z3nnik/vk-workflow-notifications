@@ -1,0 +1,29 @@
+name: 'vk-workflow-notifications'
+description: '🔔 Workflow (GitHub actions) notification in VK'
+
+branding:
+  icon: 'bell'
+  color: 'blue'
+
+inputs:
+  access_token:
+    description: 'Community access_token with scope `messages`'
+    required: true
+  peer_ids:
+    description: 'List of id chats/users (example: 2000000001,162667568)'
+    required: true
+  text:
+    description: 'Message to send'
+    required: false
+  api_version:
+    description: 'VK API version'
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.access_token }}
+    - ${{ inputs.peer_ids }}
+    - ${{ inputs.text }}
+    - ${{ inputs.api_version }}
